@@ -52,12 +52,16 @@ On ~45k balanced news articles, the system achieved **91.2% accuracy with LSTM**
 
 ---
 
-## 📂 Repository Structure  
-├── notebook.ipynb # Full pipeline
-├── requirements.txt # Dependencies
-├── README.md # Project summary
-├── data/ # Dataset (if small) or link in README
-└── visuals/ # Plots & word clouds
+### 📂 Repository Structure
+
+```
+.
+├── notebook/ .ipynb file # Full pipeline for the project
+├── requirements.txt # Lists all necessary dependencies
+├── README.md # Provides an overview and project summary
+├── data/ # Contains the dataset
+└── visuals/ # Stores plots, word clouds, and other visual outputs
+```
 
 
 ---
@@ -69,10 +73,4 @@ On ~45k balanced news articles, the system achieved **91.2% accuracy with LSTM**
 
 ---
 
-## 📚 References  
-- Shu et al., *Fake News Detection on Social Media* (2017)  
-- Pérez-Rosas et al., *Automatic Detection of Fake News* (2018)  
-- Devlin et al., *BERT: Pre-training Transformers* (2018)  
-
----
 
