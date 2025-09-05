@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detection System</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 150px;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            resize: vertical;
+            box-sizing: border-box;
+        }
+
+        textarea:focus {
+            border-color: #667eea;
+            outline: none;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .example {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .example h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .example-text {
+            font-style: italic;
+            color: #666;
+            cursor: pointer;
+        }
+
+        .example-text:hover {
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🔍 Fake News Detection</h1>
+        <p class="subtitle">Analyze news articles for authenticity and sentiment</p>
+
+        <form method="POST" action="/predict">
+            <div class="form-group">
+                <label for="text">Enter news article or headline:</label>
+                <textarea id="text" name="text" placeholder="Paste your news article or headline here..."
+                    required></textarea>
+            </div>
+            <button type="submit" class="btn">🔍 Analyze News</button>
+        </form>
+
+        <div class="example">
+            <h3>📝 Example Headlines to Try:</h3>
+            <p class="example-text" onclick="fillExample(this)">"BREAKING: Scientists have discovered a revolutionary
+                cure that doctors don't want you to know about!"</p>
+            <p class="example-text" onclick="fillExample(this)">"The Federal Reserve announced today that it will
+                maintain current interest rates following the latest economic data analysis."</p>
+            <p class="example-text" onclick="fillExample(this)">"URGENT: Secret government documents leaked revealing
+                shocking truth about recent events!"</p>
+        </div>
+    </div>
+    <script>
+        function fillExample(element) {
+            document.getElementById('text').value = element.textContent.trim();
+        }
+    </script>
+</body>
+
+</html>
