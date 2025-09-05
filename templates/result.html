@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results - Fake News Detection</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .result-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border-left: 5px solid #667eea;
+        }
+
+        .prediction {
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .fake {
+            color: #dc3545;
+        }
+
+        .real {
+            color: #28a745;
+        }
+
+        .confidence {
+            text-align: center;
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .sentiment {
+            text-align: center;
+            font-size: 1.1em;
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .positive {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .negative {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .neutral {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+
+        .original-text {
+            background: #e9ecef;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>📊 Analysis Results</h1>
+        <div class="result-card">
+            <div class="prediction {{ result.prediction.lower() }}">
+                {{ result.prediction }} News
+            </div>
+            <div class="confidence">
+                Confidence: {{ (result.confidence * 100)|round(1) }}%
+            </div>
+            <div class="sentiment {{ result.sentiment.lower() }}">
+                Sentiment: {{ result.sentiment }} ({{ result.sentiment_score|round(2) }})
+            </div>
+            <div class="original-text">
+                <h3>📝 Analyzed Text:</h3>
+                <p>{{ result.text }}</p>
+            </div>
+        </div>
+        <div style="text-align: center;">
+            <a href="/" class="btn">🔄 Analyze Another Article</a>
+        </div>
+    </div>
+</body>
+
+</html>
