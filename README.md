@@ -56,11 +56,15 @@ On ~45k balanced news articles, the system achieved **91.2% accuracy with LSTM**
 
 ```
 .
-├── notebook/ .ipynb file # Full pipeline for the project
-├── requirements.txt # Lists all necessary dependencies
-├── README.md # Provides an overview and project summary
-├── data/ # Contains the dataset
-└── visuals/ # Stores plots, word clouds, and other visual outputs
+├── notebook/            # Jupyter notebook (.ipynb) full pipeline
+├── requirements.txt     # Lists all necessary dependencies
+├── README.md            # Project overview and summary
+├── data/                # Contains the dataset
+├── model/              # Saved model files (.pkl, vectorizer, etc.)
+├── templates/           # HTML templates for Flask app
+│   ├── index.html
+│   └── result.html
+├── app.py               # Flask web application
 ```
 
 
